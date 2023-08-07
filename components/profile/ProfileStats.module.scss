@@ -1,0 +1,50 @@
+.stats {
+    position: relative;
+    flex: 1;
+    padding: 15px;
+    border-radius: var(--main-radius);
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+
+    &:before {
+        content: "";
+        position: absolute;
+        top: -180px;
+        left: -100px;
+        transform: rotate(10deg);
+        width: 220%;
+        height: 120%;
+        border-radius: var(--main-radius);
+        background-color: var(--profile-before-background);
+    }
+
+}
+
+.item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 20px;
+
+    .title {
+        min-width: 150px;
+        text-align: left;
+        font-weight: 400;
+        font-size: 14px;
+        color: var(--text-color);
+    }
+
+    .text {
+        font-weight: 800;
+        font-size: 20px;
+        color: var(--title-color);
+
+        small {
+            font-weight: 500;
+            font-size: 10px;
+        }
+    }
+}

@@ -1,0 +1,38 @@
+.link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+    padding: 8px 8px 8px 0;
+    color: var(--title-color);
+    transition: var(--transition);
+
+    &.active {
+        color: var(--primary-color);
+
+        &:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: -50px;
+            width: 3px;
+            height: 100%;
+            border-radius: calc(var(--main-radius) / 2);
+            background-color: var(--primary-color);
+        }
+    }
+
+    &:hover {
+        color: var(--primary-color);
+    }
+
+    .icon {
+        font-size: 20px;
+    }
+
+    .text {
+        font-size: 17px;
+        font-weight: 800;
+    }
+}

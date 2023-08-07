@@ -1,0 +1,25 @@
+.player {
+    position: fixed;
+    bottom: 0;
+    right: 7px;
+    width: calc(100% - 327px);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 50px;
+    padding: 10px 25px 15px 25px;
+    border-radius: calc(var(--main-radius) / 2) calc(var(--main-radius) / 2) 0 0;
+    background-color: var(--main-card-background);
+    z-index: 999;
+
+    .icon {
+        font-size: 22px;
+        color: var(--title-color);
+        cursor: pointer;
+        transition: var(--transition);
+    
+        &:hover {
+            color: var(--sub-title-color);
+        }
+    }
+}

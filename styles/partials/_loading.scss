@@ -1,0 +1,96 @@
+.loading {
+  position: relative;
+  
+  &:after {
+    content: "";
+    position: absolute;
+    top: 30%;
+    left: 15px;
+    display: block;
+    height: 18px;
+    width: 18px;
+    margin-right: auto;
+    border: 2px solid $light-color;
+    border-radius: 50%;
+    border-right-color: transparent;
+    border-top-color: transparent;
+    animation: spinAround 850ms infinite linear;
+  } /* loading after */
+  
+} /* loading */
+
+.loading-primary {
+  @extend .loading;
+  &:after {
+    border-color: $primary-color;
+    border-right-color: transparent;
+    border-top-color: transparent;
+  } /* loading primary after */
+} /* loading primary */
+
+.loading-secondary {
+  @extend .loading;
+  &:after {
+    border-color: $secondary-color;
+    border-right-color: transparent;
+    border-top-color: transparent;
+  } /* loading secondary after */
+} /* loading primary */
+
+.overlay-loading {
+  //background-color: $primary-color !important;
+  position: relative;
+  overflow: hidden !important;
+  pointer-events: none !important;
+  
+  &:before {
+    content: "" !important;
+    box-sizing: border-box;
+    position: absolute !important;
+    background-color: inherit !important;
+    width: 100% !important;
+    height: 100% !important;
+    display: block !important;
+    z-index: 1;
+    top: 0 !important;
+    left: 0 !important;
+    transform: none !important;
+    opacity: 1 !important;
+    border-radius: 0 !important;
+  } /* overlay loading before */
+  
+  &:after {
+    content: "";
+    box-sizing: border-box;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin-top: -10px;
+    margin-left: -10px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.45);
+    border-top-color: inherit;
+    animation: spinAround 0.6s linear infinite;
+    z-index: 2;
+  } /* overlay loading after */
+} /* overlay loading */
+
+.overlay-loading-secondary {
+  @extend .overlay-loading;
+
+  &:after {
+    border: 2px solid $primary-color;
+    border-top-color: inherit;
+  }
+}
+
+@keyframes spinAround {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}

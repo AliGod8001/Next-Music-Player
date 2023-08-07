@@ -1,0 +1,114 @@
+.item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 15px;
+    background-color: var(--card-background);
+    border: 1px solid var(--border-color);
+    border-radius: var(--main-radius);
+
+    .button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        border-radius: var(--main-radius);
+        font-size: 20px;
+        transition: var(--transition);
+    }
+
+    .play {
+        margin-left: auto;
+        border: 1px solid var(--primary-color);
+        background-color: var(--card-background);
+        color: var(--primary-color);
+
+        &:hover,
+        &.active {
+            background-color: var(--primary-color);
+            color: var(--light-color);
+        }
+    }
+
+    .delete {
+        background-color: var(--card-background);
+        color: var(--error-color);
+        border: 1px solid var(--error-color);
+
+        &:hover,
+        &.active {
+            background-color: var(--error-color);
+            color: var(--light-color);
+        }
+    }
+}
+
+.link {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+    cursor: pointer;
+
+    &:hover {
+        .img {
+            box-shadow: none !important;
+            transform: translateY(3px);
+        }
+    }
+
+    .count {
+        font-size: 14px;
+        color: var(--title-color);
+    }
+
+    .img {
+        width: 90px;
+        height: 90px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: -40px;
+        border-radius: var(--main-radius);
+        object-fit: cover;
+        transition: var(--transition);
+    }
+
+    .title,
+    .text {
+        text-align: left;
+        margin: 0;
+    }
+
+    .title {
+        margin-bottom: 8px;
+        font-size: 18px;
+        font-weight: 800;
+        color: var(--title-color);
+    }
+
+    .text {
+        font-size: 12.5px;
+        color: var(--text-color);
+    }
+
+    .color {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+    }
+
+    .music-count {
+        margin: 0 30px 0 auto;
+        font-size: 18px;
+        font-weight: 800;
+        color: var(--title-color);
+
+        span {
+            font-size: 14px;
+            font-weight: normal;
+        }
+    }
+}

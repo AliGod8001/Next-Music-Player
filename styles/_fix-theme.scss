@@ -1,0 +1,74 @@
+:where(.css-dev-only-do-not-override-1jr9qlj).ant-input-affix-wrapper,
+:where(.css-dev-only-do-not-override-1jr9qlj).ant-picker,
+:where(.css-dev-only-do-not-override-1jr9qlj).ant-dropdown .ant-dropdown-menu, :where(.css-dev-only-do-not-override-1jr9qlj).ant-dropdown-menu-submenu .ant-dropdown-menu,
+:where(.css-dev-only-do-not-override-1jr9qlj).ant-modal .ant-modal-content,
+:where(.css-dev-only-do-not-override-1jr9qlj).ant-color-picker-trigger,
+.ant-input,
+:where(.css-dev-only-do-not-override-1jr9qlj).ant-popover .ant-popover-inner,
+:where(.css-dev-only-do-not-override-1jr9qlj).ant-popover .ant-popover-arrow:before {
+    background-color: var(--card-background) !important;
+    border-color: var(--border-color);
+}
+
+.ant-input,
+:where(.css-dev-only-do-not-override-1jr9qlj).ant-modal .ant-modal-header {
+    background: transparent;
+    color: var(--title-color);
+}
+
+.ant-input:-webkit-autofill,
+.ant-input:-webkit-autofill:hover, 
+.ant-input:-webkit-autofill:focus, 
+.ant-input:-webkit-autofill:active  {
+    -webkit-box-shadow: 0 0 0 40px var(--card-background) inset !important;
+}
+
+.ant-input:-webkit-autofill {
+    -webkit-text-fill-color: var(--title-color) !important;
+}
+
+.ant-input::placeholder,
+.anticon.ant-input-password-icon,
+.ant-picker .ant-picker-input >input::placeholder,
+:where(.css-dev-only-do-not-override-1jr9qlj).ant-result .ant-result-subtitle {
+    color: var(--text-color) !important;
+}
+  
+:where(.css-dev-only-do-not-override-1jr9qlj).ant-input-affix-wrapper .ant-input-prefix,
+:where(.css-dev-only-do-not-override-1jr9qlj).ant-form-item .ant-form-item-label >label,
+:where(.css-dev-only-do-not-override-1jr9qlj).ant-picker,
+:where(.css-dev-only-do-not-override-1jr9qlj).ant-picker .ant-picker-suffix >*,
+:where(.css-dev-only-do-not-override-1jr9qlj).ant-picker .ant-picker-input >input,
+:where(.css-dev-only-do-not-override-1jr9qlj).ant-color-picker .ant-color-picker-inner-content .ant-color-picker-input-container .ant-color-picker-format-select.ant-select-single .ant-select-selection-item,
+:where(.css-dev-only-do-not-override-1jr9qlj).ant-result .ant-result-title {
+    color: var(--title-color);
+}
+
+:where(.css-dev-only-do-not-override-1jr9qlj).ant-modal .ant-modal-close {
+    color: var(--title-color) !important;
+}
+
+:where(.css-dev-only-do-not-override-1jr9qlj).ant-form-item .ant-form-item-control-input-content {
+    text-align: left;
+}
+
+:where(.css-dev-only-do-not-override-1jr9qlj).ant-picker {
+    width: 100%;
+}
+
+:where(.css-dev-only-do-not-override-1jr9qlj).ant-slider .ant-slider-track {
+    background-color: var(--primary-color);
+}
+
+:where(.css-dev-only-do-not-override-1jr9qlj).ant-slider .ant-slider-handle::after {
+    box-shadow: 0 0 0 2px var(--primary-color);
+}
+
+:where(.css-dev-only-do-not-override-1jr9qlj).ant-modal .ant-modal-title {
+    color: inherit;
+}
+
+:where(.css-dev-only-do-not-override-1jr9qlj).ant-form-horizontal .ant-form-item-label {
+    min-width: 150px;
+    text-align: left;
+}

@@ -1,0 +1,102 @@
+.button {
+    font-family: inherit;
+    padding: 12px 25px;
+    border-radius: calc(var(--main-radius) / 2);
+    border: 1px solid transparent;
+    font-size: 16px;
+    font-weight: 600;
+    box-shadow: 0 0 12px -20px #00000015;
+    transition: var(--transition);
+
+    &.circle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        aspect-ratio: 1;
+        max-width: 45px;
+        border-radius: 50%;
+        padding: 13px 16px !important;
+    }
+
+    &.round {
+        border-radius: calc(var(--main-radius) * 2);
+    }
+}
+
+.button:disabled {
+    color: var(--disabled-color);
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+.button.primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.button.primary:hover {
+    background-color: var(--primary-dark-color);
+}
+
+.button.primary-outline {
+    background-color: transparent;
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.button.primary-outline:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.button.primary-flat {
+    background-color: var(--primary-subtle-color);
+    color: var(--primary-dark-color);
+}
+
+.button.primary-flat:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.button.secondary {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.button.secondary:hover {
+    background-color: var(--secondary-dark-color);
+}
+
+.button.secondary-outline {
+    background-color: transparent;
+    border-color: var(--secondary-color);
+    color: var(--secondary-color);
+}
+
+.button.secondary-outline:hover {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.button.secondary-flat {
+    background-color: var(--secondary-subtle-color);
+    color: var(--secondary-dark-color);
+}
+
+.button.secondary-flat:hover {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.button.danger {
+    background-color: var(--error-color);
+    color: var(--light-color);
+}
+
+@media only screen and (max-width: 767.98px) {
+    .button {
+        padding: 10px 25px;
+        font-size: 15px;
+    }
+}

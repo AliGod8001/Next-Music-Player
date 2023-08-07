@@ -1,0 +1,32 @@
+.card {
+    padding: 20px;
+    min-width: 250px;
+    border-radius: calc(var(--main-radius) * 0.85);
+    background-color: var(--main-card-background);
+    text-align: center;
+    overflow: hidden;
+
+    .header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+
+    .title {
+        font-size: 17px;
+        font-weight: 700;
+        color: var(--title-color);
+    }
+
+    .link {
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--sub-text-color);
+        transition: var(--transition);
+
+        &:hover {
+            color: var(--title-color);
+        }
+    }
+}

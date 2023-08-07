@@ -1,0 +1,28 @@
+.wrapper {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.card {
+    padding: 15px;
+    border-radius: var(--main-radius);
+    border: 1px solid var(--border-color);
+
+    &:first-child {
+        width: 47.5%;
+    }
+
+    &:last-child {
+        flex: 1;
+    }
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 15px;
+    margin-bottom: 35px;
+}

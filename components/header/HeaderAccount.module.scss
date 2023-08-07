@@ -1,0 +1,20 @@
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    padding: 7px 10px;
+    border-radius: var(--main-radius);
+    background-color: var(--card-background-2);
+
+    .img {
+        display: block;
+        border-radius: 50%;
+    }
+
+    .text {
+        font-size: 15px;
+        font-weight: 600;
+        color: var(--title-color);
+    }
+}

@@ -1,0 +1,73 @@
+.control-wrapper {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 30px;
+
+    .button {
+        color: var(--title-color);
+        cursor: pointer;
+
+        .icon {
+            font-size: 25px;
+            transition: var(--transition);
+
+            &.active {
+                color: var(--primary-color) !important;
+            }
+        }
+    }
+
+    .current {
+        color: var(--primary-color) !important;
+    }
+
+    .control {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        // padding: 20px 30px;
+        // border-radius: calc(var(--main-radius) / 2) calc(var(--main-radius) / 2) 0 0;
+        // background-color: var(--card-background);
+        // background-color: var(--primary-color);
+    
+        .main {
+            padding: 10px 15px;
+            border-radius: var(--main-radius);
+            background-color: var(--light-color);
+            color: var(--primary-color);
+    
+            .icon {
+                font-size: 23px;
+            }
+        }
+    }
+
+    .audio {
+        flex: 1;
+
+        .slider-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+    
+            div {
+                flex: 1;
+            }
+        }
+    
+        .time {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--text-color);
+        }
+    }
+
+    .volume {
+        height: 150px;
+        padding-bottom: 10px;
+    }
+}

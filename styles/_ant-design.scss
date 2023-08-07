@@ -1,0 +1,32 @@
+:where(.css-dev-only-do-not-override-1jr9qlj).ant-input-affix-wrapper .ant-input-prefix {
+    margin-inline-end: 10px
+}
+
+:where(.css-dev-only-do-not-override-1jr9qlj).ant-input-affix-wrapper {
+    padding: 11px;
+}
+
+:where(.css-dev-only-do-not-override-1jr9qlj).ant-dropdown {
+    max-height: 350px;
+    overflow: auto;
+    &::-webkit-scrollbar {
+        width: 6.5px;
+        height: 2.5px;
+    }
+  
+    &::-webkit-scrollbar-thumb {
+        background: var(--scrollbar-thumb-color);
+    }
+  
+    &::-webkit-scrollbar-track {
+        background: var(--card-background);
+    }
+}
+
+:where(.css-dev-only-do-not-override-1jr9qlj).ant-skeleton.ant-skeleton-element {
+    display: block;
+}
+
+.ant-space-item {
+    flex: 1;
+}

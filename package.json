@@ -1,0 +1,37 @@
+{
+  "name": "weatherapp",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "export": "next export",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@types/node": "20.4.2",
+    "@types/react": "^18.2.15",
+    "antd": "^5.7.0",
+    "dayjs": "^1.11.9",
+    "dotenv": "^16.3.1",
+    "eslint": "8.45.0",
+    "eslint-config-next": "13.4.10",
+    "json-server": "^0.17.3",
+    "next": "13.4.10",
+    "nextjs-progressbar": "^0.0.16",
+    "nprogress": "^0.2.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-transition-group": "^4.4.5",
+    "sass": "^1.63.6",
+    "swiper": "^10.0.4",
+    "typescript": "5.1.6",
+    "zustand": "^4.3.9"
+  },
+  "devDependencies": {
+    "@types/react-dom": "^18.2.7",
+    "js-cookie": "^3.0.5",
+    "react-cookie": "^4.1.1"
+  }
+}

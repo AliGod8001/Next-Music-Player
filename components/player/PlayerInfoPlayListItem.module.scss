@@ -1,0 +1,29 @@
+.item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 15px;
+    padding: 5px;
+    border-radius: var(--main-radius);
+    border-left: 2.5px solid var(--card-background);
+    box-shadow: none;
+    transition: var(--transition);
+
+    .img {
+        border-radius: 50%;
+    }
+
+    .title {
+        font-size: 15px;
+        font-weight: 600;
+        color: var(--title-color);
+        margin-bottom: 5px;
+    }
+
+    .text {
+        display: block;
+        font-size: 13px;
+        font-weight: 400;
+        color: var(--text-color);
+    }
+}

@@ -1,0 +1,21 @@
+.sidebar {
+    max-width: 320px;
+    height: 100%;
+    background-color: var(--sidebar-background);
+    padding: 10px 30px 30px 30px;
+    flex: 1.5;
+    overflow: auto;
+
+    &::-webkit-scrollbar {
+        width: 6.5px;
+        height: 2.5px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: var(--scrollbar-thumb-color);
+    }
+    
+    &::-webkit-scrollbar-track {
+        background: var(--sidebar-background);
+    }
+}

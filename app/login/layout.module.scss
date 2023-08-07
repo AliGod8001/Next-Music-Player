@@ -1,0 +1,44 @@
+.img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-height: 500px;
+    overflow: hidden;
+
+    &:before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to top, var(--main-background), transparent);
+        z-index: 2;
+    }
+
+    img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.content {
+    position: relative;
+    z-index: 3;
+}
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 120px 70px 120px 70px;
+
+    .card {
+        width: 50%;
+        min-width: 400px;
+        max-width: 700px;
+        padding: 40px;
+    }
+}

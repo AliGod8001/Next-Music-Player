@@ -1,0 +1,49 @@
+.action {
+    width: 100%;
+    text-align: right;
+}
+
+.error {
+    color: var(--error-color);
+}
+
+.avatar {
+    margin-bottom: 10px;
+    text-align: left;
+
+    label {
+        cursor: pointer;
+    }
+
+    .label {
+        display: inline-block;
+        min-width: 150px;
+        font-size: 14px;
+        color: var(--title-color);
+
+        &.has-error {
+            color: var(--error-color);
+        }
+    }
+
+    .error {
+        margin-top: 5px;
+        display: block;
+        font-size: 12px;
+        color: var(--error-color);
+    }
+}
+
+.img {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 70px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 0 8px var(--card-shadow);
+
+    img {
+        border-radius: 50%;
+    }
+}

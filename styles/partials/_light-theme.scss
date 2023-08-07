@@ -1,0 +1,21 @@
+$light-header-background: $secondary-color;
+$light-main-background: #f9f9f9;
+$light-card-background: #ffffff;
+$light-card-background-2: #ffffffe6;
+$light-sidebar-background: #ffffff;
+$light-main-card-background: #ffffff;
+$light-profile-before-background: #eeeeee;
+
+$light-border-color: darken($light-card-background-2, 20%);
+$light-scrollbar-thumb-color: #c1c1c1;
+
+$light-title-color: hsl(0, 3%, 26%);
+$light-sub-title-color: mix($light-color, $light-title-color, 30%);
+
+$light-text-color: mix($light-color, $light-title-color, 50%);
+$light-sub-text-color: mix($light-color, $light-title-color, 70%);
+
+$light-sidebar-title-color: rgba(68, 64, 64, 50%);
+
+$light-header-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+$light-card-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;

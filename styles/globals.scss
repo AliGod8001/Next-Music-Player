@@ -1,0 +1,119 @@
+@import "./partials/common";
+
+:root {
+  --primary-color: #{$primary-color};
+  --primary-light-color: #{$primary-light-color};
+  --primary-dark-color: #{$primary-dark-color};
+  --primary-subtle-color: #{$primary-subtle-color};
+
+  --secondary-color: #{$secondary-color};
+  --secondary-light-color: #{$secondary-light-color};
+  --secondary-dark-color: #{$secondary-dark-color};
+  --secondary-subtle-color: #{$secondary-subtle-color};
+
+  --light-color: #{$light-color};
+  --dark-color: #{$dark-color};
+
+  --favorite-color: #{$favorite-color};
+
+  --success-color: #{$success-color};
+  --success-subtle-color: #{$success-subtle-color};
+
+  --error-color: #{$error-color};
+  --error-subtle-color: #{$error-subtle-color};
+
+
+  --info-color: #{$info-color};
+  --info-subtle-color: #{$info-subtle-color};
+
+
+  --edit-color: #{$edit-color};
+  --edit-subtle-color: #{$edit-subtle-color};
+
+
+  --warning-color: #{$warning-color};
+  --warning-subtle-color: #{$warning-subtle-color};
+
+  --disabled-color: #{$disabled-color};
+
+  --main-radius: #{$main-radius};
+
+  --transition: #{$transition};
+}
+
+:has(main.light):root {
+  --main-background: #{$light-main-background};
+  --header-background: #{$light-header-background};
+  --card-background: #{$light-card-background};
+  --card-background-2: #{$light-card-background-2};
+  --sidebar-background: #{$light-sidebar-background};
+  --main-card-background: #{$light-main-card-background};
+  --profile-before-background: #{$light-profile-before-background};
+
+  --border-color: #{$light-border-color};
+  --scrollbar-thumb-color: #{$light-scrollbar-thumb-color};
+
+  --title-color: #{$light-title-color};
+  --sub-title-color: #{$light-sub-title-color};
+
+  --text-color: #{$light-text-color};
+  --sub-text-color: #{$light-sub-text-color};
+
+  --sidebar-title-color: #{$light-sidebar-title-color};
+
+  --header-shadow: #{$light-header-shadow};
+  --card-shadow: #{$light-card-shadow};
+}
+
+:has(main.dark):root {
+  --main-background: #{$dark-main-background};
+  --header-background: #{$dark-header-background};
+  --card-background: #{$dark-card-background};
+  --card-background-2: #{$dark-card-background-2};
+  --sidebar-background: #{$dark-sidebar-background};
+  --main-card-background: #{$dark-main-card-background};
+  --profile-before-background: #{$dark-profile-before-background};
+
+  --border-color: #{$dark-border-color};
+  --scrollbar-thumb-color: #{$dark-scrollbar-thumb-color};
+
+  --title-color: #{$dark-title-color};
+  --sub-title-color: #{$dark-sub-title-color};
+
+  --text-color: #{$dark-text-color};
+  --sub-text-color: #{$dark-sub-text-color};
+
+  --sidebar-title-color: #{$dark-sidebar-title-color};
+
+  --header-shadow: #{$dark-header-shadow};
+  --card-shadow: #{$dark-card-shadow};
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background-color: var(--main-background);
+  overflow: hidden;
+}
+
+:has(main.dark) .dark-image {
+  filter: invert(1);
+}
+
+@import "ant-design";
+@import "fix-theme";

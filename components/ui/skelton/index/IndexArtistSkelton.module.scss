@@ -1,0 +1,25 @@
+.list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: -30px;
+
+    .img {
+        margin: 0 auto 13px auto;
+        border-radius: var(--main-radius) !important;
+
+        &>div {
+            width: 90px !important;
+            height: 90px !important;
+        }
+    }
+
+    .item {
+        flex: 1;
+    }
+
+    .title {
+        margin: 0 auto;
+    }
+}

@@ -1,0 +1,25 @@
+.main {
+    display: flex;
+    height: 100vh;
+}
+
+.content {
+    position: relative;
+    flex: 5.5;
+    height: 100vh;
+    overflow-y: auto;
+    padding-bottom: 20px;
+
+    &::-webkit-scrollbar {
+        width: 6.5px;
+        height: 2.5px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: var(--scrollbar-thumb-color);
+    }
+    
+    &::-webkit-scrollbar-track {
+        background: transparent;
+    }
+}

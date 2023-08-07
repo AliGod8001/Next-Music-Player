@@ -1,0 +1,66 @@
+.footer {
+    margin-top: 25px;
+
+    .other-sign {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        margin-bottom: 25px;
+        font-size: 16px;
+        font-weight: 600;
+        color: var(--sub-title-color);
+
+        &:before,
+        &:after {
+            content: "";
+            width: 100px;
+            height: 1.5px;
+            border-radius: var(--main-radius);
+            background-color: var(--sub-text-color);
+        }
+    }
+
+    .social-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 15px;
+        margin-bottom: 30px;
+    }
+
+    .social {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        padding: 15px;
+        border: 1px solid var(--border-color);
+        border-radius: var(--main-radius);
+        cursor: pointer;
+        transition: var(--transition);
+
+        &:hover {
+            background-color: var(--card-background-2);
+        }
+
+        &-text {
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--title-color);
+        }
+    }
+
+    .link {
+        font-size: 13px;
+        font-weight: 500;
+        color: var(--text-color);
+
+        span {
+            font-size: 15px;
+            font-weight: 800;
+            color: var(--title-color);
+            cursor: pointer;
+        }
+    }
+}

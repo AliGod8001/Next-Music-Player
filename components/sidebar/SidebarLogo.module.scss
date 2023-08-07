@@ -1,0 +1,13 @@
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+    margin-bottom: 25px;
+
+    .title {
+        font-size: 18px;
+        font-weight: 800;
+        color: var(--title-color);
+    }
+}

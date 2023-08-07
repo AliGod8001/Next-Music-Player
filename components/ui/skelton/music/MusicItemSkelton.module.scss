@@ -1,0 +1,32 @@
+.wrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 35px 25px;
+
+    .card {
+        width: 185px;    
+    }
+
+    .img {
+        margin: 0 auto;
+        width: 160px !important;
+        height: 160px !important;
+    }
+
+    .title h3 {
+        width: 80% !important;
+        margin: 15px auto 5px auto;
+    }
+
+    .text h3 {
+        width: 70% !important;
+        margin: 0 auto;
+    }
+
+    .title ul,
+    .text ul {
+        display: none;
+    }
+}

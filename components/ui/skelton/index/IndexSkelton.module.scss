@@ -1,0 +1,66 @@
+.wrapper {
+    .top {
+        position: relative;
+        height: 500px;
+
+        .img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+    }
+    
+    .body {
+        position: relative;
+        padding: 115px 100px 0 80px;
+        z-index: 2;
+    }
+
+    .title {
+        margin-bottom: 40px;
+    }
+
+    .name {
+        height: 40px !important;
+        margin-bottom: -20px;
+    }
+    
+    .action {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 15px;
+    }
+
+    .round {
+        width: 130px;
+        border-radius: calc(var(--main-radius) * 2);
+        overflow: hidden;
+
+        span {
+            width: 100% !important;
+            height: 45px !important;
+        }
+    }
+
+    .circle span {
+        min-width: 0 !important;
+        width: 45px !important;
+        height: 45px !important;
+        border-radius: 50% !important;
+    }
+
+    .content {
+        position: relative;
+        margin-top: -70px;
+        padding: 0 50px 100px 50px;
+        z-index: 2;
+    }
+
+    .card {
+        padding-top: 10px !important;
+    }
+}

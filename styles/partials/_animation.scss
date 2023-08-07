@@ -1,0 +1,34 @@
+.showElement {
+    opacity: 0;
+    animation: showElement 900ms forwards;
+}
+
+.showHeader{
+    animation: showHeader 900ms forwards;
+}
+
+.showSidebar {
+    animation: showElement 900ms forwards;
+}
+
+@keyframes showElement {
+    from {
+      opacity: 0;
+      transform: translateY(10vh);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+}
+
+@keyframes showHeader {
+    from {
+        opacity: 0;
+        transform: translateY(5vh);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+}

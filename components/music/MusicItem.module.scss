@@ -1,0 +1,39 @@
+.item {
+    position: relative;
+    display: block;
+    width: 185px;
+    cursor: pointer;
+    
+    .favorite {
+        position: absolute;
+        top: 10px;
+        left: 15px;
+        font-size: 20px;
+        color: var(--favorite-color);
+    }
+
+    .img {
+        display: block;
+        border-radius: calc(var(--main-radius) / 2);
+        transition: var(--transition);
+        margin: 0 auto 15px auto;
+    }
+
+    .title {
+        font-size: 15px;
+        font-weight: 800;
+        color: var(--title-color);
+        margin: 0 0 5px 0;
+    }
+
+    .text {
+        display: block;
+        font-size: 13px;
+        font-weight: 400;
+        color: var(--text-color);
+
+        small {
+            font-size: 10px;
+        }
+    }
+}

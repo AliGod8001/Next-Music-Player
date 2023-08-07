@@ -1,0 +1,21 @@
+$dark-main-background: #242424;
+$dark-header-background: darken($dark-main-background, 3.5%);
+$dark-card-background: mix(white, $dark-main-background, 10%);
+$dark-card-background-2: #20202690;
+$dark-sidebar-background: #18181d;
+$dark-main-card-background: #27272d;
+$dark-profile-before-background: #20202a;
+
+$dark-border-color: mix(white, $dark-card-background-2, 30%);
+$dark-scrollbar-thumb-color: $primary-color;
+
+$dark-title-color: $light-color;
+$dark-sub-title-color: darken($dark-title-color, 15%);
+
+$dark-text-color: darken($dark-title-color, 25%);
+$dark-sub-text-color: darken($dark-title-color, 30%);
+
+$dark-sidebar-title-color: rgba(white, 50%);
+
+$dark-header-shadow: rgba(255, 255, 255, 0.04) 0px 3px 5px;
+$dark-card-shadow: rgba(255, 255, 255, 0.1) 0px 4px 6px -1px, rgba(255, 255, 255, 0.06) 0px 2px 4px -1px;

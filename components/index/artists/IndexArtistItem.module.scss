@@ -1,0 +1,27 @@
+@import "../../../styles/partials/mixin";
+
+.artist {
+    display: block;
+    text-align: center;
+
+    .img {
+        display: block;
+        border-radius: calc(var(--main-radius) * 1.4);
+        margin: 0 auto 14px auto;
+    }
+
+    .title {
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--title-color);
+        margin: 0;
+        margin-bottom: 2px;
+        @include lineText(1);
+    }
+
+    .text {
+        font-size: 12px;
+        font-weight: 400;
+        color: var(--text-color);
+    }
+}

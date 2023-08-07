@@ -1,0 +1,49 @@
+.trend-slider {
+    .swiper-pagination {
+        top: 35% !important;
+        right: 40px !important;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+
+        .swiper-pagination-bullet {
+            width: 5.5px !important;
+            height: 5.5px !important;
+            opacity: 1 !important;
+            margin: 0 !important;
+            background-color: rgba(white, 80%);
+            transition: var(--transition);
+        }
+
+        .swiper-pagination-bullet-active {
+            background-color: rgba(white, 30%);
+        }
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+        bottom: auto;
+        left: auto;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+        padding: 10px;
+        border-radius: 50%;
+        background-color: var(--card-background-2);
+        color: var(--text-color);
+        
+        &:after {
+            display: block;
+            font-size: 16px;
+            transform: rotate(90deg);
+        }
+    }
+
+    .swiper-button-prev {
+        top: 60%;
+    }
+    
+    .swiper-button-next {
+        top: 72%;
+    }
+}
