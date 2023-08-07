@@ -3,7 +3,7 @@ import { Inter } from 'next/font/google'
 const inter = Inter({ subsets: ['latin'] })
 
 import ThemeProvider from '@/components/theme/Theme'
-import PlayListProvider from '@/providers/PlayListProvider'
+import PlayListProvider from '@/components/providers/PlayListProvider'
 import Sidebar from '@/components/sidebar/Sidebar'
 import Header from '@/components/header/Header'
 
@@ -39,9 +39,7 @@ export default function RootLayout({
             <Sidebar />
             <div className={styles.content}>
               <Header />
-              {/* <div className={styles.container}>{children}</div> */}
               {children}
-              {/* <CurrentMusic /> */}
               <Player />
               <PlayListProvider />
             </div>

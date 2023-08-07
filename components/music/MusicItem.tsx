@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-import FavoriteProvider from '@/providers/FavoriteProvider'
+import FavoriteProvider from '@/components/providers/FavoriteProvider'
 import useNumber from '@/hooks/use-number'
 
 import styles from './MusicItem.module.scss'

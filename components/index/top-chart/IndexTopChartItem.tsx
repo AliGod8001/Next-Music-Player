@@ -4,7 +4,7 @@ import { useState } from "react"
 import { useAppStore } from "@/store/app-store"
 
 import useFormatSecond from "@/hooks/use-format-second"
-import FavoriteProvider from "@/providers/FavoriteProvider"
+import FavoriteProvider from "@/components/providers/FavoriteProvider"
 
 import Icon from "@/components/ui/Icon"
 

@@ -4,7 +4,7 @@ import type { MenuProps } from 'antd';
 
 import { useAppStore } from '@/store/app-store';
 
-import FavoriteProvider from '@/providers/FavoriteProvider'
+import FavoriteProvider from '@/components/providers/FavoriteProvider'
 import PlayerInfoPlayListItem from './PlayerInfoPlayListItem';
 import Icon from '../ui/Icon'
 import NotFound from '../ui/not-found/NotFound';
