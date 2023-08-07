@@ -67,7 +67,7 @@ export const useAppStore = create<AppStoreState>() ((set) => ({
     currentMusicTime: 0,
     disableKeyDown: false,
     playListModalOpen: false,
-    playListClicked: null,
+    musicClicked: null,
     setInitialApp: (payload: AppLocalStorage) => {
         set(() => ({
             currentMusic: payload.currentMusic,
@@ -83,8 +83,8 @@ export const useAppStore = create<AppStoreState>() ((set) => ({
     setPlayListModal: (type: boolean) => {
         set(() => ({ playListModalOpen: type }))
     },
-    setPlayListClicked: (playlist: PlayList) => {
-        set(() => ({ playListClicked: playlist }))
+    setMusicClicked: (music: Music) => {
+        set(() => ({ musicClicked: music }))
     },
     setDisableKeyDown: (disabled: boolean) => set(() => ({ disableKeyDown: disabled })),
     setRepeatType: (type: RepeatType) => {

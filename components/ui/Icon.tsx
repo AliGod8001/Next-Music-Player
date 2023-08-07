@@ -9,7 +9,7 @@ const Icon = ({
     className?: string
     onClick?: () => void
 }) => {
-    const classes = `icon-${icon} ${className}`
+    const classes = `icon-${icon} ${className ? className : ""}`
     
     if (onClick) {
         const iconClickHandler = () => {

@@ -5,6 +5,7 @@ import { useAppStore } from "@/store/app-store"
 
 import useFormatSecond from "@/hooks/use-format-second"
 import FavoriteProvider from "@/components/providers/FavoriteProvider"
+import AddToPlayList from "@/components/helper/AddToPlayList"
 
 import Icon from "@/components/ui/Icon"
 
@@ -73,7 +74,7 @@ const IndexTopChartItem = ({
                 </button>
 
                 <FavoriteProvider className={`btn ${styles.button} ${styles.favorite}`} musicId={musicData.id} activeClass={styles.active}></FavoriteProvider>
-                
+                <AddToPlayList musicId={musicData.id} className={`${styles.button} ${styles.playlist}`} />
             </div>
         </li>
     )

@@ -4,6 +4,7 @@ import PutUserFavorite from '@/services/server/users/PutUserFavorite'
 import PutUserPlayList from '@/services/server/users/PutUserPlayList'
 import PutUserRecent from '@/services/server/users/PutUserRecent'
 import DeleteUserPlayList from '@/services/server/users/DeleteUserPlayList'
+import PutUserPlayListMusic from '@/services/server/users/PutUserPlayList.Music'
 
 export const useUserStore = create<UserStoreState>() ((set) => ({
     playLists: [],
@@ -99,7 +100,21 @@ export const useUserStore = create<UserStoreState>() ((set) => ({
             data: "Success"
         }
     },
-    setPlayListMusic: (type: ChangePlayListMusicType, payload: Music) => {
+    setPlayListMusic: async (type: ChangePlayListMusicType, music: Music, playlistId: number) : Promise<StoreResponse<string>> => {
+        const res = await PutUserPlayListMusic(useUserStore.getState().userInfo.id, playlistId, music, type)
 
+        if ( res.data ) {
+            set(() => ({ playLists: res.data }))
+            return {
+                status: 201,
+                statusText: `Music ${type === "add" ? "Add To" : "Remove From"} PlayList Successfully`,
+                data: "Success"
+            }
+        }
+
+        return {
+            status: res.status,
+            statusText: res.error
+        }
     }
 }))

@@ -1,25 +1,46 @@
 "use client";
-import { Modal } from "antd";
+import { useState } from "react";
+import { Modal, message } from "antd";
 
+import { useUserStore } from "@/store/user-store";
 import { useAppStore } from "@/store/app-store";
-import NotFound from "@/components/ui/not-found/NotFound";
+
+import PlayList from "./playlist/PlayList";
 
 const PlayListProvider = () => {
+  const [loading, setLoading] = useState<boolean>(false)
+
   const [
-    playlist,
     playlistModalOpen,
     setPlaylistModalOpen,
-    setPlaylistClicked,
+    musicClicked,
+    setMusicClicked,
   ] = useAppStore((state) => [
-    state.playList,
     state.playListModalOpen,
     state.setPlayListModal,
-    state.setPlayListClicked,
+    state.musicClicked,
+    state.setMusicClicked,
   ]);
+  const [playlists, setPlaylistMusic] = useUserStore((state) => [state.playLists, state.setPlayListMusic]);
+  const [messageApi, contextHolder] = message.useMessage()
 
   const hideModal = () => {
-    setPlaylistModalOpen(false)
-  }
+    setPlaylistModalOpen(false);
+    setMusicClicked(null);
+  };
+
+  const PlayListAddClickHandler = async (
+    playlistId: number,
+    type: ChangePlayListMusicType
+  ) => {
+    setLoading(true)
+    const { statusText, data } = await setPlaylistMusic(type, musicClicked, playlistId)
+    setLoading(false)
+    messageApi.open({
+      type: data ? "success" : "error",
+      content: statusText
+    })
+  };
 
   return (
     <Modal
@@ -28,15 +49,13 @@ const PlayListProvider = () => {
       footer={null}
       onCancel={hideModal}
     >
-        {
-            playlist && playlist.length ? <ul>
-                <>
-                    {
-                        playlist.map(pl => <li key={pl.id}>{pl.name}</li>)
-                    }
-                </>
-            </ul> : <NotFound>Play List</NotFound>
-        }
+      <PlayList
+        playlists={playlists}
+        onAddPlayList={PlayListAddClickHandler}
+        clickedMusicId={musicClicked ? musicClicked.id : -1}
+        loading={loading}
+      />
+      {contextHolder}
     </Modal>
   );
 };

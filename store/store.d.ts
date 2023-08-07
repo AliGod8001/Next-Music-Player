@@ -20,14 +20,14 @@ interface AppStoreState {
     volume: number,
     playList: Music[],
     playListModalOpen: boolean,
-    playListClicked: PlayList,
+    musicClicked: Music,
     playListId: string,
     currentMusicTime: number,
     repeatType: RepeatType,
     shuffleIndex: number[],
     disableKeyDown: boolean,
     setPlayListModal: (type: boolean) => void,
-    setPlayListClicked: (playlist: PlayList) => void,
+    setMusicClicked: (music: Music) => void,
     setDisableKeyDown: (disabled: boolean) => void,
     setInitialApp: (payload: AppLocalStorage) => void,
     // firstOpen: boolean,
@@ -55,7 +55,7 @@ interface UserStoreState {
     setUserInfo: (payload: User) => void,
     addPlayList: (payload: PlayList) => Promise<StoreResponse<PlayList>>,
     deletePlayList: (id: number) => promise<StoreResponse<string>>,
-    setPlayListMusic: (type: ChangePlayListMusicType, payload: Music) => void
+    setPlayListMusic: (type: ChangePlayListMusicType, music: Music, playlistId: number) => Promise<StoreResponse<string>>
 }
 
 interface BaseInfo {
