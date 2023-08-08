@@ -1,8 +1,8 @@
-import { useState } from "react";
-import { CSSProperties } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Avatar } from "antd";
+import { useState } from "react";
+import { CSSProperties } from "react";
+import { Avatar, Popconfirm } from "antd";
 
 import { useAppStore } from "@/store/app-store";
 import { useUserStore } from "@/store/user-store";
@@ -20,6 +20,7 @@ const PlayListItem = ({
   index: number;
   onShowMessage: (type: "success" | "error", content: string) => void;
 }) => {
+  const [open, setOpen] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(false);
 
   const [setMusic, setPlaylist, id, isPlaying, setIsPlaying] = useAppStore(
@@ -44,6 +45,24 @@ const PlayListItem = ({
     boxShadow: `0 0 8px ${color}80`,
   };
 
+  const showPopConfirm = () => {
+    setOpen(true);
+  };
+
+  const PopconfirmOkHandler = async () => {
+    setLoading(true);
+    const { status, statusText, data } = await deletePlaylist(playlistData.id);
+    if ( data ) {
+      setLoading(false);
+      hidePopConfirm()
+    }
+    onShowMessage(status === 201 ? "success" : "error", statusText);
+  };
+
+  const hidePopConfirm = () => {
+    setOpen(false);
+  };
+
   const playlistClickHandler = () => {
     if (playlistData.title !== id) {
       setMusic(playlistData.musics[0]);
@@ -54,19 +73,9 @@ const PlayListItem = ({
     }
   };
 
-  const playlistDeleteClickHandler = async () => {
-    setLoading(true);
-    const { status, statusText } = await deletePlaylist(playlistData.id);
-    setLoading(false);
-
-    onShowMessage(status === 201 ? "success" : "error", statusText);
-  };
   return (
     <li className={styles.item}>
-      <Link
-        className={styles.link}
-        href={`/playlists/${playlistData.id}`}
-      >
+      <Link className={styles.link} href={`/playlists/${playlistData.id}`}>
         <span className={styles.count}>{count}</span>
         {playlistData.avatar ? (
           <Image
@@ -106,14 +115,21 @@ const PlayListItem = ({
           />
         </button>
       )}
-      <button
-        className={`btn ${styles.button} ${styles.delete} ${
-          loading ? "overlay-loading" : ""
-        }`}
-        onClick={playlistDeleteClickHandler}
+      <Popconfirm
+        title={`Delete ${playlistData.title}`}
+        description="Do you want to delete your playlist?"
+        open={open}
+        onConfirm={PopconfirmOkHandler}
+        okButtonProps={{ loading }}
+        onCancel={hidePopConfirm}
       >
-        <Icon icon="trash" />
-      </button>
+        <button
+          className={`btn ${styles.button} ${styles.delete}`}
+          onClick={showPopConfirm}
+        >
+          <Icon icon="trash" />
+        </button>
+      </Popconfirm>
     </li>
   );
 };
