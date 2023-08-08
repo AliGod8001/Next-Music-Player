@@ -6,7 +6,7 @@ import { Avatar, ColorPicker, Form, Input, Modal, Spin } from "antd";
 import { useAppStore } from "@/store/app-store";
 import { useUserStore } from "@/store/user-store";
 
-import { rgbaToHex } from "@/utils/rgba-to-hex";
+import { rgbaToHex } from "@/utils";
 
 import useImage from "@/hooks/use-image";
 

@@ -6,16 +6,10 @@ import { Avatar } from "antd";
 
 import { useAppStore } from "@/store/app-store";
 import { useUserStore } from "@/store/user-store";
+import { formatPlaylistTitle } from "@/utils";
 
 import Icon from "../ui/Icon";
 import styles from "./PlayListItem.module.scss";
-
-const formatPlayListTitle = (title: string): string => {
-  return `${title.split(" ")[0][0].toUpperCase()}${title
-    .split(" ")
-    .at(-1)[0]
-    .toUpperCase()}`;
-};
 
 const PlayListItem = ({
   playlistData,
@@ -28,7 +22,15 @@ const PlayListItem = ({
 }) => {
   const [loading, setLoading] = useState<boolean>(false);
 
-  const [setMusic, setPlaylist, id, isPlaying, setIsPlaying] = useAppStore(state => [state.setMusic, state.setPlaylist, state.playListId, state.isPlaying, state.setPlayingState])
+  const [setMusic, setPlaylist, id, isPlaying, setIsPlaying] = useAppStore(
+    (state) => [
+      state.setMusic,
+      state.setPlaylist,
+      state.playListId,
+      state.isPlaying,
+      state.setPlayingState,
+    ]
+  );
   const deletePlaylist = useUserStore((state) => state.deletePlayList);
 
   const count: string = index < 10 ? `0${index}` : `${index}`;
@@ -43,12 +45,12 @@ const PlayListItem = ({
   };
 
   const playlistClickHandler = () => {
-    if ( playlistData.title !== id ) {
-      setMusic(playlistData.musics[0])
-      setPlaylist(playlistData.title, playlistData.musics)
+    if (playlistData.title !== id) {
+      setMusic(playlistData.musics[0]);
+      setPlaylist(playlistData.title, playlistData.musics);
     } else {
-      if ( isPlaying ) setIsPlaying(false)
-      else setIsPlaying (true)
+      if (isPlaying) setIsPlaying(false);
+      else setIsPlaying(true);
     }
   };
 
@@ -63,7 +65,7 @@ const PlayListItem = ({
     <li className={styles.item}>
       <Link
         className={styles.link}
-        href={`/profile/playlists/${playlistData.id}`}
+        href={`/playlists/${playlistData.id}`}
       >
         <span className={styles.count}>{count}</span>
         {playlistData.avatar ? (
@@ -78,7 +80,7 @@ const PlayListItem = ({
           />
         ) : (
           <Avatar className={styles.img} style={{ ...imageStyle }}>
-            {formatPlayListTitle(playlistData.title)}
+            {formatPlaylistTitle(playlistData.title)}
           </Avatar>
         )}
         <div>
@@ -97,7 +99,11 @@ const PlayListItem = ({
           className={`btn ${styles.button} ${styles.play}`}
           onClick={playlistClickHandler}
         >
-          <Icon icon={isPlaying && playlistData.title === id ? "pause-fill" : "play"} />
+          <Icon
+            icon={
+              isPlaying && playlistData.title === id ? "pause-fill" : "play"
+            }
+          />
         </button>
       )}
       <button

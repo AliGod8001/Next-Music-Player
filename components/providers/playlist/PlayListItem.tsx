@@ -7,15 +7,9 @@ import { useUserStore } from "@/store/user-store";
 import { useAppStore } from "@/store/app-store";
 
 import MainButton from "@/components/ui/button/MainButton";
+import { formatPlaylistTitle } from "@/utils";
 
 import styles from "./PlayListItem.module.scss";
-
-const formatPlayListTitle = (title: string): string => {
-  return `${title.split(" ")[0][0].toUpperCase()}${title
-    .split(" ")
-    .at(-1)[0]
-    .toUpperCase()}`;
-};
 
 const PlayListItem = ({ playlistData }: { playlistData: PlayList }) => {
   const [loading, setLoading] = useState<boolean>(false);
@@ -57,7 +51,7 @@ const PlayListItem = ({ playlistData }: { playlistData: PlayList }) => {
         />
       ) : (
         <Avatar className={styles.img}>
-          {formatPlayListTitle(playlistData.title)}
+          {formatPlaylistTitle(playlistData.title)}
         </Avatar>
       )}
       <div>

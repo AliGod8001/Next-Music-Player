@@ -4,7 +4,7 @@ import { create } from 'zustand'
 import GetLogin from '@/services/server/users/GetLogin';
 import Register from '@/services/server/users/Register';
 
-import { encrypt } from '@/utils/decoding';
+import { encrypt } from '@/utils';
 
 const STORAGE_NAME = process.env.NEXT_PUBLIC_AUTH_STORE
 

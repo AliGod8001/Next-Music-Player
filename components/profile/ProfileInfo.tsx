@@ -2,7 +2,7 @@ import { useRouter } from 'next/navigation'
 import Image from 'next/image'
 import { Avatar } from 'antd'
 
-import { encrypt } from '@/utils/decoding'
+import { encrypt } from '@/utils'
 
 import Icon from '../ui/Icon'
 import styles from './ProfileInfo.module.scss'
