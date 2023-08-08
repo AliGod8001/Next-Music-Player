@@ -43,7 +43,7 @@ const ProfileEditForm = ({
 
   const avatarProps = {
     className: styles.img,
-    ...(userInfo.profileImage && !image && { src: userInfo.profileImage }),
+    ...(userInfo && userInfo.profileImage && !image && { src: userInfo.profileImage }),
     ...(image && { src: image }),
   };
 

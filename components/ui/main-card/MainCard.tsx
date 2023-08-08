@@ -45,4 +45,4 @@ const MainCard = ({
     </div>
 }
 
-export default MainCard;
+export default MainCard;    

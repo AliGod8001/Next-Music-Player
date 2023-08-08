@@ -1,21 +1,20 @@
 import { decrypt } from "@/utils/decoding";
-
 import ProfileEdit from "@/components/profile/edit/ProfileEdit";
 
 export const metadata = {
-    title: "Profile | Edit"
-}
+  title: "Profile | Edit",
+};
 
 const ProfileEditPage = async ({
-    params
-} : {
-    params: {
-        userId: string
-    }
+  params,
+}: {
+  params: {
+    userId: string;
+  };
 }) => {
-    const userId = decrypt(params.userId)
+  const userId = decrypt(params.userId);
 
-    return <ProfileEdit userId={userId} />
-}
+  return <ProfileEdit userId={userId} />;
+};
 
 export default ProfileEditPage;

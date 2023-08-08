@@ -2,12 +2,13 @@
     position: relative;
     display: block;
     width: 185px;
+    text-align: center;
     cursor: pointer;
     
     .fixed {
         position: absolute;
         top: 10px;
-        left: 15px;
+        left: 20px;
         display: flex;
         align-items: flex-start;
         justify-content: flex-start;
@@ -19,7 +20,12 @@
         font-size: 20px;
 
         &.playlist {
+            display: flex;
+            padding: 5px;
             color: var(--light-color);
+            background-color: rgba(black, 50%);
+            border-radius: 50%;
+            aspect-ratio: 1;
         }
 
         &:not(.playlist) {
