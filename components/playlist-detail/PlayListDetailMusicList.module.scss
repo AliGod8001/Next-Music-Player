@@ -1,0 +1,36 @@
+.wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px;
+    border-radius: var(--main-radius);
+    transition: var(--transition);
+    overflow: hidden;
+}
+
+.draggingover {
+    background-color: var(--card-background);
+    padding-bottom: 100px;
+}
+
+.loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 10px;
+    text-align: left;
+    font-size: 15px;
+    font-weight: 400;
+    background-color: rgba(black, 25%);
+    color: var(--title-color);
+    border-radius: var(--main-radius);
+    backdrop-filter: blur(1.5px);
+}

@@ -3,6 +3,13 @@
     align-items: center;
     justify-content: flex-start;
     gap: 15px;
+    transition: var(--transition);
+
+    &.dragging {
+        .title {
+            color: var(--primary-color);
+        }
+    }
 
     .audio {
         display: none;
@@ -31,6 +38,7 @@
         font-weight: 700;
         color: var(--title-color);
         margin-bottom: 5px;
+        transition: var(--transition);
     }
 
     .text {

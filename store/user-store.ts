@@ -7,6 +7,7 @@ import PutUserPlayList from '@/services/server/users/PutUserPlayList'
 import PutUserRecent from '@/services/server/users/PutUserRecent'
 import DeleteUserPlayList from '@/services/server/users/DeleteUserPlayList'
 import PutUserPlayListMusic from '@/services/server/users/PutUserPlayList.Music'
+import PutPlayListMusicOrder from '@/services/server/users/playlists/PutPlayListMusicOrder'
 
 export const useUserStore = create<UserStoreState>() ((set) => ({
     playLists: [],
@@ -129,5 +130,16 @@ export const useUserStore = create<UserStoreState>() ((set) => ({
             status: res.status,
             statusText: res.error
         }
-    }
+    },
+    changePlayListMusicOrder: async (playlistId: number, newOrder: Music[]) => {
+        const res = await PutPlayListMusicOrder(useUserStore.getState().userInfo.id, playlistId, newOrder)
+
+        if ( res.data ) {
+            set(() => ({ playLists: res.data }))
+            const playlist = res.data.find(playlist => playlist.id === playlistId)
+            if ( useAppStore.getState().playListId === playlist.title ) {
+                useAppStore.getState().setPlaylist(playlist.title, playlist.musics)
+            }
+        }
+    },
 }))

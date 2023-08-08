@@ -16,10 +16,12 @@ const IndexTopChartItem = ({
     musicData,
     index,
     onMusicClick,
+    isDragging,
 } : {
     musicData: Music,
     index: number,
     onMusicClick: (music: Music) => void,
+    isDragging?: boolean,
 }) => {
     const [music, isPlaying, setIsPlaying] = useAppStore(state => [state.currentMusic, state.isPlaying, state.setPlayingState])
 
@@ -47,8 +49,8 @@ const IndexTopChartItem = ({
     }
 
     return (
-        <li> 
-            <div className={styles.link}>
+        <li style={{ listStyle: "none" }}> 
+            <div className={`${styles.link} ${isDragging ? styles.dragging : ""}`}>
                 <audio className={styles.audio} onLoadedMetadata={metadataLoadHandler}>
                     <source src={musicData.src} type="audio/mpeg" />
                     Your browser does not support the audio element.

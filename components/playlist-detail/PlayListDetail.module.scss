@@ -1,0 +1,46 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 30px;
+    margin-bottom: 35px;
+}
+
+.img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    border-radius: var(--main-radius);
+    object-fit: cover;
+}
+
+.title {
+    text-align: left;
+    font-weight: 800;
+    font-size: 30px;
+    margin-bottom: 7px;
+}
+
+.count {
+    display: block;
+    text-align: left;
+    font-weight: 700;
+    font-size: 20px;
+    color: var(--title-color);
+
+    small {
+        font-weight: 350;
+        font-size: 15px;
+    }
+}
+
+.delete {
+    margin-left: auto;
+    padding: 8px;
+    font-size: 20px;
+    border-radius: var(--main-radius);
+    background-color: var(--error-color);
+    color: var(--light-color);
+}

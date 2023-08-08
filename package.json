@@ -12,6 +12,7 @@
   "dependencies": {
     "@types/node": "20.4.2",
     "@types/react": "^18.2.15",
+    "@types/react-beautiful-dnd": "^13.1.4",
     "antd": "^5.7.0",
     "dayjs": "^1.11.9",
     "dotenv": "^16.3.1",

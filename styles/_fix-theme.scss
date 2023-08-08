@@ -5,7 +5,8 @@
 :where(.css-dev-only-do-not-override-1jr9qlj).ant-color-picker-trigger,
 .ant-input,
 :where(.css-dev-only-do-not-override-1jr9qlj).ant-popover .ant-popover-inner,
-:where(.css-dev-only-do-not-override-1jr9qlj).ant-popover .ant-popover-arrow:before {
+:where(.css-dev-only-do-not-override-1jr9qlj).ant-popover .ant-popover-arrow:before,
+:where(.css-dev-only-do-not-override-1jr9qlj).ant-btn-default {
     background-color: var(--card-background) !important;
     border-color: var(--border-color);
 }
@@ -30,7 +31,8 @@
 .ant-input::placeholder,
 .anticon.ant-input-password-icon,
 .ant-picker .ant-picker-input >input::placeholder,
-:where(.css-dev-only-do-not-override-1jr9qlj).ant-result .ant-result-subtitle {
+:where(.css-dev-only-do-not-override-1jr9qlj).ant-result .ant-result-subtitle,
+:where(.css-dev-only-do-not-override-1jr9qlj).ant-popconfirm .ant-popconfirm-message .ant-popconfirm-description {
     color: var(--text-color) !important;
 }
   
@@ -40,7 +42,9 @@
 :where(.css-dev-only-do-not-override-1jr9qlj).ant-picker .ant-picker-suffix >*,
 :where(.css-dev-only-do-not-override-1jr9qlj).ant-picker .ant-picker-input >input,
 :where(.css-dev-only-do-not-override-1jr9qlj).ant-color-picker .ant-color-picker-inner-content .ant-color-picker-input-container .ant-color-picker-format-select.ant-select-single .ant-select-selection-item,
-:where(.css-dev-only-do-not-override-1jr9qlj).ant-result .ant-result-title {
+:where(.css-dev-only-do-not-override-1jr9qlj).ant-result .ant-result-title,
+:where(.css-dev-only-do-not-override-1jr9qlj).ant-popconfirm .ant-popconfirm-message .ant-popconfirm-title,
+:where(.css-dev-only-do-not-override-1jr9qlj).ant-btn-default {
     color: var(--title-color);
 }
 
