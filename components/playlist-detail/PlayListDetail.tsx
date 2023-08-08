@@ -84,6 +84,7 @@ const PlayListDetail = ({ playlistId }: { playlistId: string }) => {
         <PlayListDetailMusicList
           color={playlist.color}
           playlistId={playlist.id}
+          playlistTitle={playlist.title}
           musics={playlist.musics}
         />
       ) : (

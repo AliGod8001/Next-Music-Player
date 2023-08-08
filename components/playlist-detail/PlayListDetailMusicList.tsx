@@ -19,15 +19,17 @@ const reorder = (list: Music[], startIndex: number, endIndex: number) => {
 const PlayListDetailMusics = ({
   musics,
   playlistId,
+  playlistTitle,
   color,
 }: {
   musics: Music[];
   playlistId: number;
+  playlistTitle: string,
   color: string
 }) => {
   const [loading, setLoading] = useState<boolean>(false);
   const [reorderedMusics, setReorderedMusics] = useState<Music[]>(musics);
-  const setMusic = useAppStore((state) => state.setMusic);
+  const [setMusic, setPlaylist, id] = useAppStore((state) => [state.setMusic, state.setPlaylist, state.playListId]);
   const changePlaylistMusicOrder = useUserStore(
     (state) => state.changePlayListMusicOrder
   );
@@ -51,6 +53,9 @@ const PlayListDetailMusics = ({
 
   const musicClickHandler = (music: Music) => {
     setMusic(music);
+    if ( playlistTitle !== id ) {
+      setPlaylist(playlistTitle, musics)
+    }
   };
 
   return (
