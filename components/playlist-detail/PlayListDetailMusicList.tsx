@@ -30,8 +30,8 @@ const PlayListDetailMusics = ({
   const [loading, setLoading] = useState<boolean>(false);
   const [reorderedMusics, setReorderedMusics] = useState<Music[]>(musics);
   const [setMusic, setPlaylist, id] = useAppStore((state) => [state.setMusic, state.setPlaylist, state.playListId]);
-  const changePlaylistMusicOrder = useUserStore(
-    (state) => state.changePlayListMusicOrder
+  const [changePlaylistMusicOrder, setPlaylistMusic] = useUserStore(
+    (state) => [state.changePlayListMusicOrder, state.setPlayListMusic]
   );
 
   const onDragEnd = async (result: DropResult) => {
@@ -51,10 +51,14 @@ const PlayListDetailMusics = ({
     setLoading(false);
   };
 
-  const musicClickHandler = (music: Music) => {
-    setMusic(music);
-    if ( playlistTitle !== id ) {
-      setPlaylist(playlistTitle, musics)
+  const musicClickHandler = (type: "play" | "remove", music: Music) => {
+    if ( type === "play" ) {
+      setMusic(music);
+      if ( playlistTitle !== id ) {
+        setPlaylist(playlistTitle, musics)
+      }
+    } else {
+      setPlaylistMusic("remove", music, playlistId)
     }
   };
 

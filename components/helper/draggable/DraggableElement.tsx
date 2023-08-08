@@ -7,7 +7,7 @@ const DraggableElement = ({
   onMusicClick,
 }: {
   lists: any[];
-  onMusicClick: (music: Music) => void;
+  onMusicClick: (type: "play" | "remove", music: Music) => void;
 }) => {
   return lists.map((list, index) => (
     <Draggable
@@ -26,6 +26,7 @@ const DraggableElement = ({
             musicData={list}
             onMusicClick={onMusicClick}
             isDragging={snapShot.isDragging}
+            inPlaylist
           />
         </div>
       )}
