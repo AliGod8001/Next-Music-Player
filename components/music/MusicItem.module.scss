@@ -4,12 +4,27 @@
     width: 185px;
     cursor: pointer;
     
-    .favorite {
+    .fixed {
         position: absolute;
         top: 10px;
         left: 15px;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .btn {
         font-size: 20px;
-        color: var(--favorite-color);
+
+        &.playlist {
+            color: var(--light-color);
+        }
+
+        &:not(.playlist) {
+            color: var(--favorite-color);
+        }
     }
 
     .img {

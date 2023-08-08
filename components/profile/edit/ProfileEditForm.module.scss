@@ -1,6 +1,9 @@
 .action {
     width: 100%;
-    text-align: right;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
 }
 
 .error {
@@ -40,6 +43,7 @@
     justify-content: center;
     width: 70px;
     height: 70px;
+    border-radius: 50%;
     border: 1px solid var(--border-color);
     box-shadow: 0 0 8px var(--card-shadow);
 

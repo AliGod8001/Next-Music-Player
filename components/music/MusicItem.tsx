@@ -1,6 +1,7 @@
 import Image from 'next/image'
 
 import FavoriteProvider from '@/components/providers/FavoriteProvider'
+import AddToPlayList from '../helper/AddToPlayList'
 import useNumber from '@/hooks/use-number'
 
 import styles from './MusicItem.module.scss'
@@ -19,7 +20,10 @@ const MusicItem = ({
     }
 
     return <li className={styles.item}>
-        <FavoriteProvider musicId={musicData.id} className={styles.favorite} />
+        <div className={styles.fixed}>
+            <FavoriteProvider musicId={musicData.id} className={styles.btn} />
+            <AddToPlayList musicId={musicData.id} className={`${styles.btn} ${styles.playlist}`} />
+        </div>
         <div onClick={musicClickHandler}>
             <Image
                 className={styles.img}

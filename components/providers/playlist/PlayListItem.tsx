@@ -1,5 +1,10 @@
+"use client";
 import Image from "next/image";
-import Avatar from "antd/es/avatar/avatar";
+import { useState } from "react";
+import { Avatar, message } from "antd";
+
+import { useUserStore } from "@/store/user-store";
+import { useAppStore } from "@/store/app-store";
 
 import MainButton from "@/components/ui/button/MainButton";
 
@@ -12,27 +17,31 @@ const formatPlayListTitle = (title: string): string => {
     .toUpperCase()}`;
 };
 
-const PlayListItem = ({
-  playlistData,
-  onAddPlayListClick,
-  clickedMusicId,
-  loading,
-}: {
-  playlistData: PlayList;
-  clickedMusicId: number;
-  onAddPlayListClick: (
-    playlistId: number,
-    type: ChangePlayListMusicType
-  ) => void;
-  loading: boolean,
-}) => {
+const PlayListItem = ({ playlistData }: { playlistData: PlayList }) => {
+  const [loading, setLoading] = useState<boolean>(false);
+
+  const setPlaylistMusic = useUserStore((state) => state.setPlayListMusic);
+  const musicClicked = useAppStore((state) => state.musicClicked);
+  const [messageApi, contextHolder] = message.useMessage();
+
   const musicIsInPlaylist =
+    musicClicked &&
     playlistData.musics.length &&
-    playlistData.musics.findIndex((music) => music.id === clickedMusicId) !==
+    playlistData.musics.findIndex((music) => music.id === musicClicked.id) !==
       -1;
 
-  const addToPlayListClickHandler = () => {
-    onAddPlayListClick(playlistData.id, musicIsInPlaylist ? "remove" : "add");
+  const addToPlayListClickHandler = async () => {
+    setLoading(true);
+    const { statusText, data } = await setPlaylistMusic(
+      musicIsInPlaylist ? "remove" : "add",
+      musicClicked,
+      playlistData.id
+    );
+    setLoading(false);
+    messageApi.open({
+      type: data ? "success" : "error",
+      content: statusText,
+    });
   };
 
   return (
@@ -56,12 +65,13 @@ const PlayListItem = ({
         <span className={styles.text}>{playlistData.description}</span>
       </div>
       <MainButton
-        type="primary"
+        type={musicIsInPlaylist ? "danger" : "primary"}
         className={`${styles.button} ${loading ? "overlay-loading" : ""}`}
         onClick={addToPlayListClickHandler}
       >
-        {musicIsInPlaylist ? "Remove From PlayList" : "Add To PlayList"}
+        {musicIsInPlaylist ? "Remove" : "Add"}
       </MainButton>
+      {contextHolder}
     </li>
   );
 };

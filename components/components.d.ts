@@ -57,3 +57,5 @@ interface UserEditPayload {
 }
 
 type playChangeType ="play" | "pause"
+
+type buttonType = "button" | "reset" | "submit"

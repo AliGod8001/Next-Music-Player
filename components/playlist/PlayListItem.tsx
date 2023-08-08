@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Avatar } from "antd";
 
+import { useAppStore } from "@/store/app-store";
 import { useUserStore } from "@/store/user-store";
 
 import Icon from "../ui/Icon";
@@ -27,6 +28,7 @@ const PlayListItem = ({
 }) => {
   const [loading, setLoading] = useState<boolean>(false);
 
+  const [setMusic, setPlaylist, id, isPlaying, setIsPlaying] = useAppStore(state => [state.setMusic, state.setPlaylist, state.playListId, state.isPlaying, state.setPlayingState])
   const deletePlaylist = useUserStore((state) => state.deletePlayList);
 
   const count: string = index < 10 ? `0${index}` : `${index}`;
@@ -41,7 +43,13 @@ const PlayListItem = ({
   };
 
   const playlistClickHandler = () => {
-    console.log(`${playlistData.title} play playlist clicked`);
+    if ( playlistData.title !== id ) {
+      setMusic(playlistData.musics[0])
+      setPlaylist(playlistData.title, playlistData.musics)
+    } else {
+      if ( isPlaying ) setIsPlaying(false)
+      else setIsPlaying (true)
+    }
   };
 
   const playlistDeleteClickHandler = async () => {
@@ -84,12 +92,14 @@ const PlayListItem = ({
           {musicCount}
         </div>
       </Link>
-      <button
-        className={`btn ${styles.button} ${styles.play}`}
-        onClick={playlistClickHandler}
-      >
-        <Icon icon="play" />
-      </button>
+      {musicCount > 0 && (
+        <button
+          className={`btn ${styles.button} ${styles.play}`}
+          onClick={playlistClickHandler}
+        >
+          <Icon icon={isPlaying && playlistData.title === id ? "pause-fill" : "play"} />
+        </button>
+      )}
       <button
         className={`btn ${styles.button} ${styles.delete} ${
           loading ? "overlay-loading" : ""

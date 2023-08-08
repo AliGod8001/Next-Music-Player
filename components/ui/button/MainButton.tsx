@@ -1,5 +1,5 @@
 /* other imports */
-import React from 'react'
+import React, { ButtonHTMLAttributes, CSSProperties } from 'react'
 import styles from './MainButton.module.scss'
 
 const convertType = (type: ButtonType) => {
@@ -35,6 +35,8 @@ const MainButton = ({
     disabled,
     circle,
     round,
+    style,
+    buttonType,
 } : {
     children: React.ReactNode,
     type: ButtonType,
@@ -43,6 +45,8 @@ const MainButton = ({
     disabled?: boolean,
     circle?: boolean,
     round?: boolean,
+    style?: CSSProperties
+    buttonType?: buttonType,
 }) => {
     const classes = `btn ${styles.button} ${convertType(type)} ${Array.isArray(className) ? className.join(' ') : className} ${circle ? styles.circle : ""} ${round ? styles.round : ""}`
     
@@ -50,7 +54,7 @@ const MainButton = ({
         onClick !== undefined ? onClick() : null
     }
 
-    return <button className={classes} disabled={disabled} onClick={buttonClickHandler} >
+    return <button type={buttonType ? buttonType : "button"} className={classes} disabled={disabled} onClick={buttonClickHandler} style={{...style}}>
         {children}
     </button>
 }

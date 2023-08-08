@@ -12,10 +12,9 @@ const convertSize = (size: number) => {
 }
 
 const useReadFile = (file: File | null, maxSize: number, prfx: FilePrefix) : ReadFileResponse => {
-  const response : ReadFileResponse = {
-    status: 404,
-    statusText: "File not found"
-  }
+  let status: number = 404;
+  let statusText: string = "File Not Found."
+  let promise: Promise<string>;
 
   const prfxIndex = prefixes.findIndex(pr => pr === prfx)
 
@@ -24,10 +23,10 @@ const useReadFile = (file: File | null, maxSize: number, prfx: FilePrefix) : Rea
     const currentPrfxIndex = prefixes.findIndex(pr => pr === prefix)
 
     if ( currentPrfxIndex > prfxIndex || prefix === prfx && convertedSize > maxSize ) {
-      response.status = 501;
-      response.statusText = `Your file size is greather than our ${maxSize}${prfx} limit`
+      status = 501;
+      statusText = `Your file size is greather than our ${maxSize}${prfx} limit`
     } else {
-      const promise : Promise<string> = new Promise(function (resolve, reject) {
+      promise = new Promise(function (resolve, reject) {
         let fr : FileReader = new FileReader();
     
         fr.onload = function () {
@@ -41,13 +40,16 @@ const useReadFile = (file: File | null, maxSize: number, prfx: FilePrefix) : Rea
         fr.readAsDataURL(file);
       })
 
-      response.status = 201
-      response.statusText = "Success"
-      response.promise = promise
+      status = 201
+      statusText = "Success"
     }
   }
 
-  return response;
+  return {
+    status,
+    statusText,
+    promise
+  };
 };
 
 export default useReadFile;

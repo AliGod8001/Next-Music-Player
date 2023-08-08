@@ -5,18 +5,19 @@ const DeleteUserPlayList = async (userId: number, playlistId: number) : Promise<
     let error : string = ""
     let data : PlayList[];
 
-    const userData = await GetUser(userId)
+    const userRes = await GetUser(userId)
 
-    if ( userData ) {
-        const playlistIndex = userData.playLists.findIndex(playlist => playlist.id === playlistId)
+    if ( userRes.data ) {
+        const user = userRes.data
+        const playlistIndex = user.playLists.findIndex(playlist => playlist.id === playlistId)
 
         if ( playlistIndex !== -1 ) {
-            const newPlaylist = userData.playLists.filter(playlist => playlist.id !== playlistId)
-            userData.playLists = newPlaylist
+            const newPlaylist = user.playLists.filter(playlist => playlist.id !== playlistId)
+            user.playLists = newPlaylist
 
             const res = await fetch(`${process.env.NEXT_PUBLIC_USERS_API}/${userId}`, {
                 method: "PUT",
-                body: JSON.stringify(userData),
+                body: JSON.stringify(user),
                 headers: {
                     "Content-Type" : "application/json"
                 }

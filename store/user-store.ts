@@ -1,5 +1,7 @@
 import { create } from 'zustand'
 
+import { useAppStore } from './app-store'
+
 import PutUserFavorite from '@/services/server/users/PutUserFavorite'
 import PutUserPlayList from '@/services/server/users/PutUserPlayList'
 import PutUserRecent from '@/services/server/users/PutUserRecent'
@@ -92,6 +94,9 @@ export const useUserStore = create<UserStoreState>() ((set) => ({
 
         if ( status === 201 ) {
             set(() => ({ playLists: data }))
+            useAppStore.getState().setMusic(useUserStore.getState().recent[0])
+            useAppStore.getState().setPlayingState(false)
+            useAppStore.getState().setPlaylist("recent-musics-playlist", useUserStore.getState().recent)
         }
 
         return {
@@ -105,12 +110,20 @@ export const useUserStore = create<UserStoreState>() ((set) => ({
 
         if ( res.data ) {
             set(() => ({ playLists: res.data }))
+
+            const playlist = res.data.find(playlist => playlist.id === playlistId )
+            if ( useAppStore.getState().playListId === playlist.title ) {
+                useAppStore.getState().setPlaylist(playlist.title, playlist.musics)
+            }
             return {
+
                 status: 201,
                 statusText: `Music ${type === "add" ? "Add To" : "Remove From"} PlayList Successfully`,
                 data: "Success"
             }
+            
         }
+
 
         return {
             status: res.status,
