@@ -11,7 +11,7 @@ const IndexArtits = ({
     return (
         <MainCard 
             title="Top Artists" 
-            link="/"
+            link="/artists"
             text="See all"
         >
             <ul className={styles.list}>

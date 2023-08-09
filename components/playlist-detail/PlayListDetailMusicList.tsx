@@ -35,14 +35,13 @@ const PlayListDetailMusics = ({
   );
 
   const onDragEnd = async (result: DropResult) => {
-    if (!result.destination) {
+    if (!result.destination || result.destination.index === result.source.index ) {
       return;
     }
 
     setReorderedMusics(
       reorder(musics, result.source.index, result.destination.index)
     );
-
     setLoading(true);
     await changePlaylistMusicOrder(
       playlistId,

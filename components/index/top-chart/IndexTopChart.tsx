@@ -25,7 +25,7 @@ const IndexTopChart = ({
     return (
         <MainCard 
             title="Top Charts"
-            link="/"
+            link="/musics"
             text="See all"
         >
             <ul className={styles.list}>
