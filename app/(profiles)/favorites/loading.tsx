@@ -1,7 +1,7 @@
 import MusicItemSkelton from "@/components/ui/skelton/music/MusicItemSkelton";
 
-const MusicsGroupLoading = () => {
+const FavoritesPageLoading = () => {
     return <MusicItemSkelton />
 }
 
-export default MusicsGroupLoading;
+export default FavoritesPageLoading;
