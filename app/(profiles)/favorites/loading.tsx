@@ -1,7 +1,7 @@
-import MusicItemSkelton from "@/components/ui/skelton/music/MusicItemSkelton";
+import MusicItemSkeleton from "@/components/ui/skeleton/music/MusicItemSkeleton";
 
 const FavoritesPageLoading = () => {
-    return <MusicItemSkelton />
+    return <MusicItemSkeleton />
 }
 
 export default FavoritesPageLoading;

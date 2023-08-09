@@ -1,7 +1,7 @@
-import MusicItemSkelton from "@/components/ui/skelton/music/MusicItemSkelton";
+import MusicItemSkeleton from "@/components/ui/skeleton/music/MusicItemSkeleton";
 
 const MusicsGroupLoading = () => {
-    return <MusicItemSkelton />
+    return <MusicItemSkeleton />
 }
 
 export default MusicsGroupLoading;

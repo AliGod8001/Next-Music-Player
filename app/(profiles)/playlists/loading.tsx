@@ -1,8 +1,7 @@
-import { Spin } from "antd";
+import PlayListSkeleton from "@/components/ui/skeleton/playlist/index/PlayListSkeleton";
 
-// TODO: add skelton loading to this page
 const PlaylistsPageloaing = () => {
-    return <Spin size="large" />
+    return <PlayListSkeleton />
 }
 
 export default PlaylistsPageloaing;

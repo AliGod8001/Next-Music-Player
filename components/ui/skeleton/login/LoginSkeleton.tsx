@@ -1,7 +1,7 @@
 "use client"
 import { Skeleton, Space } from 'antd'
 
-const LoginSkelton = () => {
+const LoginSkeleton = () => {
     return (
         <div>
             <Skeleton 
@@ -36,4 +36,4 @@ const LoginSkelton = () => {
     )
 }
 
-export default LoginSkelton;
+export default LoginSkeleton;

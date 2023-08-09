@@ -1,7 +1,7 @@
-import ProfileSkelton from "@/components/ui/skelton/profile/ProfileSkelton";
+import ProfileSkeleton from "@/components/ui/skeleton/profile/ProfileSkeleton";
 
 const ProfilePageLoading = () => {
-    return <ProfileSkelton />
+    return <ProfileSkeleton />
 }
 
 export default ProfilePageLoading;

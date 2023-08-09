@@ -1,8 +1,8 @@
 import { Skeleton } from "antd";
 
-import styles from './IndexArtistSkelton.module.scss'
+import styles from './IndexArtistSkeleton.module.scss'
 
-const IndexArtistSkelton = () => {
+const IndexArtistSkeleton = () => {
     const skeltons = new Array(6).fill(5)
     return (
         <div className={styles.list}>
@@ -19,4 +19,4 @@ const IndexArtistSkelton = () => {
     )
 }
 
-export default IndexArtistSkelton;
+export default IndexArtistSkeleton;

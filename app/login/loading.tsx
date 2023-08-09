@@ -1,8 +1,8 @@
-import LoginSkelton from "@/components/ui/skelton/login/LoginSkelton";
+import LoginSkeleton from "@/components/ui/skeleton/login/LoginSkeleton";
 
 
 const LoginPageLoading = () => {
-    return <LoginSkelton />
+    return <LoginSkeleton />
 }
 
 export default LoginPageLoading;

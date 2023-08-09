@@ -1,14 +1,14 @@
 "use client";
+import React from "react";
 import { message } from "antd";
 
 import { useUserStore } from "@/store/user-store";
 
-import NotFound from "../ui/not-found/NotFound";
+import NotFound from "@/components/ui/not-found/NotFound";
 import PlayListItem from "./PlayListItem";
 import PlayListAdd from "./PlayListAdd";
-
 import styles from "./PlayList.module.scss";
-import React from "react";
+
 
 const PlayList = () => {
   const [messageApi, contextHolder] = message.useMessage();

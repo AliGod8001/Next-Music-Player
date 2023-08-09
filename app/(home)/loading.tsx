@@ -1,7 +1,7 @@
-import IndexSkelton from "@/components/ui/skelton/index/IndexSkelton";
+import IndexSkeleton from "@/components/ui/skeleton/index/IndexSkeleton";
 
 const HomePageLoading = () => {
-    return <IndexSkelton />
+    return <IndexSkeleton />
 }
 
 export default HomePageLoading;

@@ -1,9 +1,9 @@
 "use client"
 import { Skeleton } from "antd";
 
-import styles from './MusicItemSkelton.module.scss'
+import styles from './MusicItemSkeleton.module.scss'
 
-const MusicItemSkelton = () => {
+const MusicItemSkeleton = () => {
     return (
         <div className={styles.wrapper}>
             {
@@ -19,4 +19,4 @@ const MusicItemSkelton = () => {
     )
 }
 
-export default MusicItemSkelton;
+export default MusicItemSkeleton;

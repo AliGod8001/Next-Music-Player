@@ -1,12 +1,12 @@
 "use client"
 import { Skeleton } from 'antd';
 
-import IndexArtistSkelton from './IndexArtistSkelton';
+import IndexArtistSkeleton from './IndexArtistSkeleton';
 import MainCard from '../../main-card/MainCard';
 
-import styles from './IndexSkelton.module.scss'
+import styles from './IndexSkeleton.module.scss'
 
-const IndexSkelton = () => {
+const IndexSkeleton = () => {
     return (
         <div className={styles.wrapper}>            
             <div className={styles.top}>
@@ -43,11 +43,11 @@ const IndexSkelton = () => {
                             paragraph={{ rows: 0 }} />
                     </>
                 )}>
-                    <IndexArtistSkelton />
+                    <IndexArtistSkeleton />
                 </MainCard>
             </div>
         </div>
     )
 }
 
-export default IndexSkelton;
+export default IndexSkeleton;
