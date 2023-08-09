@@ -6,17 +6,17 @@
   border: 1px solid var(--light-color);
   overflow: hidden;
 
-  // &:before {
-  //     content: "";
-  //     position: absolute;
-  //     top: -180px;
-  //     left: -100px;
-  //     transform: rotate(10deg);
-  //     width: 220%;
-  //     height: 120%;
-  //     border-radius: var(--main-radius);
-  //     background-color: var(--profile-before-background);
-  // }
+  &:before {
+      content: "";
+      position: absolute;
+      top: -180px;
+      left: -100px;
+      transform: rotate(10deg);
+      width: 220%;
+      height: 120%;
+      border-radius: var(--main-radius);
+      background-color: var(--profile-before-background);
+  }
 }
 
 .item {
