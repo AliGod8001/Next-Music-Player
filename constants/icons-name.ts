@@ -1,4 +1,5 @@
 export const iconsName = [
+    "minus",
     "edit",
     "plus",
     "trash",

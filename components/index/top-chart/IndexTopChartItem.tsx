@@ -1,12 +1,10 @@
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
 
 import { useAppStore } from "@/store/app-store";
-import useFormatSecond from "@/hooks/use-format-second";
+import useAudioDuration from "@/hooks/use-audio-duration";
 import FavoriteProvider from "@/components/providers/FavoriteProvider";
 import AddToPlayList from "@/components/helper/AddToPlayList";
-
 import Icon from "@/components/ui/Icon";
 
 import styles from "./IndexTopChartItem.module.scss";
@@ -31,16 +29,9 @@ const IndexTopChartItem = ({
     state.setPlayingState,
   ]);
 
-  const [duratoinSeconds, setDurationSeconds] = useState<number>(null);
-  const formatedDuration = useFormatSecond(duratoinSeconds);
+  const { durationSeconds, formatedDuration, output } = useAudioDuration(musicData.src)
   const number = index < 10 ? `0${index}` : `${index}`;
   const currentMusic = music && music.id === musicData.id;
-
-  const metadataLoadHandler = (e: React.SyntheticEvent<HTMLAudioElement>) => {
-    const audioElement = e.target as HTMLAudioElement;
-    const { duration } = audioElement;
-    setDurationSeconds(duration);
-  };
 
   const musicPlayClickHandler = () => {
     if (currentMusic) {
@@ -60,11 +51,8 @@ const IndexTopChartItem = ({
 
   return (
     <li style={{ listStyle: "none" }}>
+      {output}
       <div className={`${styles.link} ${isDragging ? styles.dragging : ""}`}>
-        <audio className={styles.audio} onLoadedMetadata={metadataLoadHandler}>
-          <source src={musicData.src} type="audio/mpeg" />
-          Your browser does not support the audio element.
-        </audio>
         <span className={styles.number}>{number}</span>
         <Image
           className={styles.img}
@@ -81,7 +69,7 @@ const IndexTopChartItem = ({
         </Link>
 
         <span className={styles.time}>
-          {duratoinSeconds ? `${formatedDuration} '` : "00:00 '"}
+          {durationSeconds ? `${formatedDuration} '` : "00:00 '"}
         </span>
         <button
           className={`btn ${styles.button} ${styles.play} ${
@@ -103,8 +91,8 @@ const IndexTopChartItem = ({
             className={`${styles.button} ${styles.playlist}`}
           />
         ) : (
-          <button onClick={removeFromPlaylistClickHandler}>
-            <Icon icon="trash" />
+          <button onClick={removeFromPlaylistClickHandler} className={`btn ${styles.playlist} ${styles.remove}`}>
+            <Icon icon="minus" />
           </button>
         )}
       </div>

@@ -93,5 +93,9 @@
         background-color: var(--main-card-background);
         color: var(--primary-color);
         font-size: 23px;
+
+        &.remove {
+            color: var(--error-color);
+        }
     }
 }
