@@ -15,7 +15,7 @@ const IndexTopChart = ({
 }) => {
     const [setMusic, setPlayList, playlistId] = useAppStore(state => [state.setMusic, state.setPlaylist, state.playListId])
 
-    const playMusicClickHandler = (music: Music) => {
+    const playMusicClickHandler = (type: "play" | "remove" = "play", music: Music) => {
         setMusic(music)
         if ( playlistId !== PLAY_LIST_ID ) {
             setPlayList(PLAY_LIST_ID, musics)
