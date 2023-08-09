@@ -10,10 +10,16 @@
     border-radius: var(--main-radius);
 
     .img {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         margin-top: -30px;
 
         &>div {
-            display: block !important;
+            display: flex !important;
+            align-items: center;
+            justify-content: center;
+            // display: block !important;
             width: 90px !important;
             height: 90px !important;
             margin-top: -40px;
