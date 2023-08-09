@@ -34,9 +34,11 @@ const FavoriteProvider = ({
             })
         } else {
             setLoading(true)
-            const music = await GetMusic(musicId)
+            const { data } = await GetMusic(musicId)
             setLoading(false)
-            setFavorite(music)
+            if ( data ) {
+                setFavorite(data)
+            }
         }
     }
 
