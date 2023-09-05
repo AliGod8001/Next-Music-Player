@@ -119,6 +119,7 @@ const PlayerControl = ({
     }
 
     const metadataLoadHandler = () => {
+        console.log(ref)
         setDuration(ref.current.duration)
     }
 
@@ -183,6 +184,18 @@ const PlayerControl = ({
         }
     }
 
+    const loadHandler = () => {
+        console.log('load handler')
+    }
+
+    const loadStartHandler = () => {
+        console.log('load start handler')
+    }
+
+    const loadedDataHandler = () => {
+        console.log('loaded data handler')
+    }
+
     const nextMusicClickHandler = () => changeMusic("next", false)
 
     return <div className={styles['control-wrapper']}>
@@ -207,7 +220,7 @@ const PlayerControl = ({
         <div className={styles.audio}>
             {
                 music 
-                && <audio ref={ref} onTimeUpdate={musicTimeUpdateHandler} onLoadedMetadata={metadataLoadHandler}>
+                && <audio ref={ref} onTimeUpdate={musicTimeUpdateHandler} onLoadedMetadata={metadataLoadHandler} onLoad={loadHandler} onLoadedData={loadedDataHandler} onLoadStart={loadStartHandler}>
                     <source src={music.src} type="audio/mpeg" />
                     Your browser does not support the audio element.
                 </audio>
